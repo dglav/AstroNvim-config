@@ -11,8 +11,6 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        -- add more arguments for adding more language servers
-        "tsserver",
       },
     },
   },
@@ -23,7 +21,6 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "prettier",
       },
     },
   },
@@ -31,10 +28,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
-      ensure_installed = {
-        "python",
-        -- add more arguments for adding more debuggers
-      },
+      ensure_installed = {},
     },
   },
 }

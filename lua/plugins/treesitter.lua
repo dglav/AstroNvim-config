@@ -5,7 +5,6 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
   opts = {
     highlight = {
       enable = true,
@@ -14,9 +13,6 @@ return {
     ensure_installed = {
       "lua",
       "vim",
-      "markdown",
-      "typescript",
-      "javascript",
     },
   },
 }
