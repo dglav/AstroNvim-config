@@ -185,9 +185,10 @@ return {
         },
       },
       filesystem = {
-        follow_current_file = { enabled = true },
+        follow_current_file = { enabled = true, leave_dirs_open = false },
         filtered_items = {
-          visible = true, 
+          visible = false,
+          hide_dotfiles = false,
           hide_gitignored = true,
         },
         hijack_netrw_behavior = "open_current",
