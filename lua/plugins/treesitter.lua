@@ -11,6 +11,9 @@ return {
     ensure_installed = {
       "lua",
       "vim",
+      "markdown", -- for markview
+      "markdown_inline", -- for markview
+      "html", -- for markview
     },
   },
 }
