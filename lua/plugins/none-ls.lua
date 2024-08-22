@@ -23,12 +23,6 @@ return {
           "markdown",
         },
       },
-      null_ls.builtins.formatting.shfmt.with {
-        filetypes = {
-          "sh",
-          "bash",
-        },
-      },
     }
     return config -- return final config table
   end,
