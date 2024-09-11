@@ -23,6 +23,10 @@ return {
         name = "personal",
         path = "~/Documents/second-brain",
       },
+      {
+        name = "optimind",
+        path = "~/Documents/Optimind/optimind-brain",
+      },
     },
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
