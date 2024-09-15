@@ -58,6 +58,9 @@ return {
     local astroui = require "astroui"
     local get_icon = function(icon) return astroui.get_icon(icon, 0, true) end
     return {
+      symbol_in_winbar = {
+        enable = false,
+      },
       code_action = { extend_gitsigns = require("astrocore").is_available "gitsigns.nvim" },
       lightbulb = { sign = false },
       ui = {
