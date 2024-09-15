@@ -1,0 +1,7 @@
+vim.api.nvim_create_user_command("CopyRelativePath", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local full_path = vim.api.nvim_buf_get_name(bufnr)
+  local relative_path = vim.fn.fnamemodify(full_path, ":.")
+  vim.fn.setreg("+", relative_path)
+  print("Copied to clipboard: " .. relative_path)
+end, {})
