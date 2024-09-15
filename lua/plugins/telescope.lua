@@ -76,6 +76,8 @@ return {
             end,
             desc = "Find words in all files",
           }
+          maps.n["<Leader>fg"] =
+            { function() require("telescope").extensions.live_grep_args.live_grep_args() end, desc = "Find grep" }
         end
         maps.n["<Leader>lD"] =
           { function() require("telescope.builtin").diagnostics() end, desc = "Search diagnostics" }
@@ -118,6 +120,7 @@ return {
       end,
     },
     "nvim-treesitter/nvim-treesitter",
+    "nvim-telescope/telescope-live-grep-args.nvim",
   },
   cmd = "Telescope",
   opts = function()
@@ -169,5 +172,10 @@ return {
       },
     }
   end,
-  config = function(...) require "astronvim.plugins.configs.telescope"(...) end,
+  config = function(...)
+    require "astronvim.plugins.configs.telescope"(...)
+
+    local telescope = require "telescope"
+    telescope.load_extension "live_grep_args"
+  end,
 }
