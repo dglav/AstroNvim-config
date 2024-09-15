@@ -72,7 +72,7 @@ return {
       close_if_last_window = true,
       sources = { "filesystem", "buffers", git_available and "git_status" or nil },
       source_selector = {
-        winbar = true,
+        winbar = false,
         content_layout = "center",
         sources = sources,
       },
