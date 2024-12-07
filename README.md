@@ -32,3 +32,7 @@ git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```shell
 nvim
 ```
+
+# Updating Packages
+
+Open the Lazy interface with `:Lazy`, navigate to the plugin you want to update, and press u to update it.
