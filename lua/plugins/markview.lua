@@ -18,30 +18,6 @@ return {
     local presets = require "markview.presets"
 
     return {
-      headings = presets.headings.slanted,
-      -- headings = {
-      --   enable = false,
-      -- heading_1 = {
-      --   shift_char = "",
-      --   sign = " ",
-      --   hl = "DiagnosticOk",
-      -- },
-      -- heading_2 = {
-      --   shift_char = "",
-      --   sign = " ",
-      --   hl = "DiagnosticHint",
-      -- },
-      -- heading_3 = {
-      --   shift_char = "",
-      --   sign = " ",
-      --   hl = "DiagnosticInfo",
-      -- },
-      -- heading_4 = {},
-      -- heading_5 = {},
-      -- heading_6 = {},
-      -- setext_1 = {},
-      -- setext_2 = {},
-      -- },
       code_blocks = {
         sign = false,
         min_width = 80,
@@ -50,30 +26,57 @@ return {
         enable = true,
         presets = presets.checkboxes.nerd,
       },
-      list_items = {
-        enable = true,
-        indent_size = 2,
-        shift_width = 3,
-        marker_minus = {
-          -- When true, paddings are added to list items
-          add_padding = true,
 
-          text = "➤",
-          hl = "MarkviewListItemStar",
+      preview = {
+        -- This is nice to have
+        callbacks = {
+          on_enable = function(_, win)
+            vim.wo[win].conceallevel = 2
+            vim.wo[win].concealcursor = "c"
+          end,
         },
+        -- For hybrid mode:
+        modes = { "n", "no", "c" }, -- Change these modes to what you need
+        hybrid_modes = { "n" }, -- Uses this feature on normal mode
       },
 
-      -- For hybrid mode:
-      modes = { "n", "no", "c" }, -- Change these modes to what you need
+      markdown = {
+        headings = presets.headings.slanted,
+        -- headings = {
+        --   enable = false,
+        -- heading_1 = {
+        --   shift_char = "",
+        --   sign = " ",
+        --   hl = "DiagnosticOk",
+        -- },
+        -- heading_2 = {
+        --   shift_char = "",
+        --   sign = " ",
+        --   hl = "DiagnosticHint",
+        -- },
+        -- heading_3 = {
+        --   shift_char = "",
+        --   sign = " ",
+        --   hl = "DiagnosticInfo",
+        -- },
+        -- heading_4 = {},
+        -- heading_5 = {},
+        -- heading_6 = {},
+        -- setext_1 = {},
+        -- setext_2 = {},
+        -- },
+        list_items = {
+          enable = true,
+          indent_size = 2,
+          shift_width = 3,
+          marker_minus = {
+            -- When true, paddings are added to list items
+            add_padding = true,
 
-      hybrid_modes = { "n" }, -- Uses this feature on normal mode
-
-      -- This is nice to have
-      callbacks = {
-        on_enable = function(_, win)
-          vim.wo[win].conceallevel = 2
-          vim.wo[win].concealcursor = "c"
-        end,
+            text = "➤",
+            hl = "MarkviewListItemStar",
+          },
+        },
       },
     }
   end,
