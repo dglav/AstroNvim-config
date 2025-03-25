@@ -41,7 +41,7 @@ return {
       },
 
       markdown = {
-        headings = presets.headings.slanted,
+        headings = presets.headings.glow,
         -- headings = {
         --   enable = false,
         -- heading_1 = {
